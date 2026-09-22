@@ -1,0 +1,46 @@
+{
+    "schemaVersion": 1,
+    "id": "server-optimize",
+    "version": "${version}",
+    "name": "Server Optimize",
+    "description": "Server-side optimization mod for Minecraft",
+    "authors": [
+        "Me!"
+    ],
+    "contact": {
+        "homepage": "https://fabricmc.net/",
+        "sources": "https://github.com/FabricMC/fabric-example-mod"
+    },
+    "license": "CC0-1.0",
+    "icon": "assets/server-optimize/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "preLaunch": [
+            "com.server_optimize.ServerOptimizePreLaunch"
+        ],
+        "main": [
+            "com.server_optimize.ServerOptimize"
+        ],
+        "client": [
+            "com.server_optimize.client.ServerOptimizeClient"
+        ]
+    },
+    "mixins": [
+        "server-optimize.mixins.json",
+        "server-optimize.accessor.mixins.json",
+        {
+            "config": "server-optimize.tweakermore.client.mixins.json",
+            "environment": "client"
+        },
+        {
+            "config": "server-optimize.client.mixins.json",
+            "environment": "client"
+        }
+    ],
+    "depends": {
+        "fabricloader": ">=0.18.4",
+        "minecraft": "~1.21.11",
+        "java": ">=21",
+        "fabric-api": "*"
+    }
+}

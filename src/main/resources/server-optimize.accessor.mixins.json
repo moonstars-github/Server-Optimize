@@ -1,0 +1,31 @@
+{
+    "required":  true,
+    "package":  "com.server_optimize.mixin.accessor",
+    "refmap":  "server-optimize.mixins.refmap.json",
+    "compatibilityLevel":  "JAVA_21",
+    "mixins":  [
+                   "HopperBlockEntityAccessor",
+                   "BoundTickingBlockEntityAccessor",
+                   "LevelAccessor",
+                   "LevelChunkAccessor",
+                   "ChunkMapAccessor",
+                   "RegionFileAccessor",
+                   "IOWorkerAccessor",
+                   "ChunkAccessLightCorrectAccessor",
+                   "RegionFileStorageAccessor",
+                   "ConnectionAccessor",
+                   "ServerCommonPacketListenerAccessor",
+                   "CommandSourceStackAccessor",
+                   "LevelEntityGetterAdapterAccessor",
+                   "ClassInstanceMultiMapAccessor",
+                   "EntitySectionAccessor",
+                   "EntityDataAccessors",
+                   "UtilAccessor",
+                   "ServerChunkCacheRegionAccessor",
+                   "ServerChunkCacheSpawnAccessor",
+                   "NaturalSpawnerSpawnStateAccessor",
+               ],
+    "injectors":  {
+                      "defaultRequire":  1
+                  }
+}

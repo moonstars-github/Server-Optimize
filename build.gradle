@@ -1,0 +1,73 @@
+plugins {
+	id 'fabric-loom' version "${loom_version}"
+	id 'maven-publish'
+}
+
+	loom {
+    mixin {
+		useLegacyMixinAp = true
+		defaultRefmapName = "server-optimize.mixins.refmap.json"
+		}
+	}
+
+version = project.mod_version
+group = project.maven_group
+
+repositories {
+	maven {
+		name = 'Aliyun'
+		url = 'https://maven.aliyun.com/repository/public'
+	}
+	mavenCentral()
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	modImplementation include("com.moandjiezana.toml:toml4j:0.7.2")
+	implementation include("com.github.luben:zstd-jni:1.5.5-11")
+	// Thread affinity ([thread]): JNA native calls for SetThreadAffinityMask /
+	// sched_setaffinity on the current thread. Core library only - the
+	// kernel32/libc entry points are declared via JNA interface mapping.
+	implementation include("net.java.dev.jna:jna:5.14.0")
+	compileOnly files("I:/Userdata/Serverfile/Minecraft/1.21.11/.minecraft/mods/tweakermore-v3.33.2-mc1.21.11.jar")
+	compileOnly files("I:/Userdata/Serverfile/Minecraft/1.21.11/.minecraft/mods/malilib-fabric-1.21.11-0.27.20.jar")
+	compileOnly "io.github.llamalad7:mixinextras-fabric:0.5.4"
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+java {
+	withSourcesJar()
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+	def projectName = project.name
+	inputs.property "projectName", projectName
+	from("LICENSE") {
+		rename { "${it}_$projectName" }
+	}
+}
+
+publishing {
+	publications {
+		create("mavenJava", MavenPublication) {
+			from components.java
+		}
+	}
+	repositories {
+	}
+}
+
+
+

@@ -1,0 +1,123 @@
+# gradle
+
+.gradle/
+build/
+out/
+classes/
+
+# eclipse
+
+*.launch
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# macos
+
+*.DS_Store
+
+# fabric
+
+run/
+
+# java
+
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+
+# test server
+TestServer/
+TestResult/
+tempfile/
+.tmp/
+
+# gradle cache (variants)
+.gradle-cache/
+.gradle-cache-new/
+.gradle-cache2/
+.gradle-home/
+.gradle_home/
+fresh-cache/
+gradle-dist/
+gradle-user-home/
+jdk21/
+mappings/
+
+# fabric-loom native
+fabric-loom-native/
+
+# build output
+net/
+/com/
+/me/
+/carpet/
+/carpettisaddition/
+tempdir-java/
+
+# server logs
+server_error.txt
+server_output.txt
+server_pid.txt
+fabric-server-launcher.properties
+
+# local debugging files
+maven-test.txt
+gradle-debug.log
+mod_compile_template.pom
+hopper_javap.txt
+minecraft_server_javap.txt
+tickrate_javap.txt
+emf_javap.txt
+tweakmore_*.txt
+tweakermore.mixins.json
+carpet_commands.txt
+logtail.txt
+patch.txt
+tmp_*.txt
+gentest.py
+server-optimize.mixins.refmap.json
+server-optimize.tweakermore.client.mixins.json
+/fabric.mod.json
+jfr_*.json
+so_*.log
+smoke-*.log
+
+# misc build/test artifacts
+META-INF/
+temp2/
+versions/
+wrapper/
+certs/
+build.bat*.bak
+
+# local decompile/analysis artifacts
+.cfr_*/
+.hopper-inspect/
+.jdksrc/
+/mc_src/
+assets/
+flightrecorder-config.jfc
+*.javap.txt
+.*.javap.txt
+.*-javap*.txt
+.javap_*.txt
+compile_output.txt
+.hopper-head.java
+.hopper-mixin-head.java
+.hopper-suck-check.txt
+carpet_jar_list.txt
+/data/

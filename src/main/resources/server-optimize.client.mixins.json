@@ -1,0 +1,21 @@
+{
+    "required": true,
+    "package": "com.server_optimize.client.mixin",
+    "refmap": "server-optimize.mixins.refmap.json",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "DebugScreenEntriesAccessor",
+        "DebugScreenEntryListAccessor",
+        "DebugScreenEntryListMixin",
+        "ChatComponentMixin",
+        "CommandSuggestionsMixin",
+        "ClientLevelParticleMixin",
+        "MinecraftRenderThreadAffinityMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "overwrites": {
+        "requireAnnotations": true
+    }
+}
